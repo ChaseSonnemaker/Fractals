@@ -122,8 +122,9 @@ public class Vector3D {
      */
     public Vector3D scale(double factor0, double factor1, double factor2) {
         double new0 = this.p0 * factor0;
-        double new1 = this.p0 * factor1;
-        return new Vector3D(0, 0, 0);
+        double new1 = this.p1 * factor1;
+        double new2 = this.p2 * factor2;
+        return new Vector3D(new0, new1, new2);
     }// scale(double, double, double)
     
     
