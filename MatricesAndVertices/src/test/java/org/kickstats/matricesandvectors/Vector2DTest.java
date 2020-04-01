@@ -73,7 +73,8 @@ public class Vector2DTest {
         Vector2D instance = new Vector2D(2, 2);
         Vector2D expResult = new Vector2D(4, 4);
         Vector2D result = instance.add(v);
-        assertEquals(expResult, result);
+        assertEquals(expResult.getp0(), result.getp0());
+        assertEquals(expResult.getp1(), result.getp1());
     }
 
     /**
@@ -87,7 +88,8 @@ public class Vector2DTest {
         Vector2D instance = new Vector2D(2, 2);
         Vector2D expResult = new Vector2D(4, 8);
         Vector2D result = instance.scale(factor0, factor1);
-        assertEquals(expResult, result);
+        assertEquals(expResult.getp0(), result.getp0());
+        assertEquals(expResult.getp1(), result.getp1());
     }
 
     /**
@@ -100,7 +102,8 @@ public class Vector2DTest {
         Vector2D instance = new Vector2D(2, 2);
         Vector2D expResult = new Vector2D(6, 6);
         Vector2D result = instance.scale(factor);
-        assertEquals(expResult, result);
+        assertEquals(expResult.getp0(), result.getp0());
+        assertEquals(expResult.getp1(), result.getp1());
     }
 
     /**
@@ -113,7 +116,8 @@ public class Vector2DTest {
         Vector2D instance = new Vector2D(2, 2);
         Vector2D expResult = new Vector2D(2, 2);
         Vector2D result = instance.rotate(angle);
-        assertEquals(expResult, result);
+        assertEquals(expResult.getp0(), result.getp0());
+        assertEquals(expResult.getp1(), result.getp1());
     }
 
     /**
@@ -130,7 +134,8 @@ public class Vector2DTest {
         Vector2D instance = new Vector2D(2, 2);
         Vector2D expResult = new Vector2D(7, 11);
         Vector2D result = instance.rotateScaleTranslate(angle, scalep0, scalep1, deltap0, deltap1);
-        assertEquals(expResult, result);
+        assertEquals(expResult.getp0(), result.getp0());
+        assertEquals(expResult.getp1(), result.getp1());
     }
 
     /**
