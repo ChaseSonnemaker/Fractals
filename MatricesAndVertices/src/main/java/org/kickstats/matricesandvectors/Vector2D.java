@@ -9,15 +9,22 @@ package org.kickstats.matricesandvectors;
  */
 public class Vector2D {
     
+     /**
+     * First number in the vector, corresponding to x.
+     */
     double p0;
+    
+     /**
+     * Second number in the vector, corresponding to y.
+     */
     double p1;
     
     
     /**
      * Creates a Vector2D instance.
      * 
-     * @param p0 First number in the vector.
-     * @param p1 Second number in the vector.
+     * @param p0 First number in the vector, corresponding to x.
+     * @param p1 Second number in the vector, corresponding to y.
      */
     public Vector2D(double p0, double p1) {
         this.p0 = p0;
