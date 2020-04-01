@@ -196,7 +196,7 @@ public class Vector3D {
      * @return The magnitude of the vector.
      */
     public double magnitude() {
-        return 0;
+        return Math.sqrt(this.dot(this));
     }// magnitude()
     
 }// Vector3D
