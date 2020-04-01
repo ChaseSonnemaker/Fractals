@@ -1,5 +1,5 @@
 
-package org.kickstats.matricesandvertices;
+package org.kickstats.matricesandvectors;
 
 /**
  * Models a 3x3 matrix.

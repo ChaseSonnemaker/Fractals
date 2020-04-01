@@ -1,5 +1,5 @@
 
-package org.kickstats.matricesandvertices;
+package org.kickstats.matricesandvectors;
 
 /**
  * Models a 2x2 matrix.
