@@ -103,7 +103,8 @@ public class Vector3D {
     public Vector3D add(Vector3D v) {
         double sum0 = this.p0 + v.p0;
         double sum1 = this.p1 + v.p1;
-        return new Vector3D(0, 0, 0);
+        double sum2 = this.p2 + v.p2;
+        return new Vector3D(sum0, sum1, sum2);
     }// add(Vector3D)
     
     
