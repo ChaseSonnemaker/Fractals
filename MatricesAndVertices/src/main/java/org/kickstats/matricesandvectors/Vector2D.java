@@ -120,7 +120,9 @@ public class Vector2D {
      * angle.
      */
     public Vector2D rotate(double angle) {
-        return new Vector2D(0, 0);
+        double new0 = this.p0 * Math.cos(angle) + this.p1 * Math.sin(angle);
+        double new1 = this.p0 * Math.sin(angle) + this.p1 * Math.cos(angle);
+        return new Vector2D(new0, new1);
     }// rotate(double)
     
     
