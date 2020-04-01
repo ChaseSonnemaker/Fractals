@@ -2,7 +2,7 @@
 package org.kickstats.matricesandvectors;
 
 /**
- * Models a vertex of length 3.
+ * Models a vector of length 3.
  * 
  * @author Chase Sonnemaker
  * @version 31 March 2020
