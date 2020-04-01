@@ -63,9 +63,9 @@ public class Vector2D {
      * @return The dot product of the two vectors.
      */
     public double dot(Vector2D v) {
-        double sum0 = this.p0 * v.p0;
-        double sum1 = this.p1 * v.p1;
-        return sum0 + sum1;
+        double product0 = this.p0 * v.p0;
+        double product1 = this.p1 * v.p1;
+        return product0 + product1;
     }// dot(Vector2D)
     
     
@@ -76,6 +76,7 @@ public class Vector2D {
      * @return A vector of length 2 that is the sum of the other two vectors.
      */
     public Vector2D add(Vector2D v) {
+        
         return new Vector2D(0, 0);
     }// add(Vector2D)
     
