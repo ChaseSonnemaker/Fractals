@@ -46,7 +46,7 @@ public class Vector3D {
      */
     @Override
     public String toString() {
-        return "";
+        return "(" + this.p0 + ", " + this.p1 + ", " + this.p2 + ")";
     }// toString()
     
     
