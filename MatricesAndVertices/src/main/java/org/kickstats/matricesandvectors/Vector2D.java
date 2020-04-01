@@ -32,7 +32,7 @@ public class Vector2D {
      */
     @Override
     public String toString() {
-        return "";
+        return "(" + this.p0 + ", " + this.p1 + ")";
     }// toString()
     
     
