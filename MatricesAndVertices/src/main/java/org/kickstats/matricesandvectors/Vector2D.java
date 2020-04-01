@@ -20,7 +20,8 @@ public class Vector2D {
      * @param p1 Second number in the vector.
      */
     public Vector2D(double p0, double p1) {
-        
+        this.p0 = p0;
+        this.p1 = p1;
     }// Vector2D(double, double)
     
     
@@ -64,18 +65,6 @@ public class Vector2D {
     public double dot(Vector2D v) {
         return 0;
     }// dot(Vector2D)
-    
-    
-    /**
-     * Multiplies this vector by another vector of length 2.
-     * 
-     * @param v Another vector of length 2.
-     * @return A vector of length 2 that is the product of the other 
-     * two vectors.
-     */
-    public Vector2D multiply(Vector2D v) {
-        return new Vector2D(0, 0);
-    }// multiply(Vector2D)
     
     
     /**
