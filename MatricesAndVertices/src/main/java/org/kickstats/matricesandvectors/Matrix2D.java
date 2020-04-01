@@ -58,7 +58,15 @@ public class Matrix2D {
      * Creates a 2x2 identity matrix instance.
      */
     public Matrix2D() {
+        this.p00 = 1;
+        this.p01 = 0;
+        this.p10 = 0;
+        this.p11 = 1;
         
+        this.row0 = new Vector2D(this.p00, this.p01);
+        this.row1 = new Vector2D(this.p10, this.p11);
+        this.column0 = new Vector2D(this.p00, this.p10);
+        this.column1 = new Vector2D(this.p01, this.p11);
     }// Matrix2D()
     
     
@@ -71,7 +79,15 @@ public class Matrix2D {
      * @param p11 Number at row 1, column 1.
      */
     public Matrix2D(double p00, double p01, double p10, double p11) {
+        this.p00 = p00;
+        this.p01 = p01;
+        this.p10 = p10;
+        this.p11 = p11;
         
+        this.row0 = new Vector2D(this.p00, this.p01);
+        this.row1 = new Vector2D(this.p10, this.p11);
+        this.column0 = new Vector2D(this.p00, this.p10);
+        this.column1 = new Vector2D(this.p01, this.p11);
     }// Matrix2D(double, double, double, double)
     
     
