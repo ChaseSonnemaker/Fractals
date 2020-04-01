@@ -101,7 +101,7 @@ public class Vector2D {
      */
     public Vector2D scale(double factor0, double factor1) {
         double new0 = this.p0 * factor0;
-        double new1 = this.p0 * factor1;
+        double new1 = this.p1 * factor1;
         return new Vector2D(new0, new1);
     }// scale(double, double)
     
