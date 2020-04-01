@@ -21,7 +21,7 @@ public class Vector2DTest {
     public void testToString() {
         System.out.println("toString");
         Vector2D instance = new Vector2D(2, 2);
-        String expResult = "(2, 2)";
+        String expResult = "(2.0, 2.0)";
         String result = instance.toString();
         assertEquals(expResult, result);
     }
