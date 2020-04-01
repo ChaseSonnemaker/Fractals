@@ -63,7 +63,9 @@ public class Vector2D {
      * @return The dot product of the two vectors.
      */
     public double dot(Vector2D v) {
-        return 0;
+        double sum0 = this.p0 * v.p0;
+        double sum1 = this.p1 * v.p1;
+        return sum0 + sum1;
     }// dot(Vector2D)
     
     
