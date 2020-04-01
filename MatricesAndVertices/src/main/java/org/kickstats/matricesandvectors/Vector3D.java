@@ -137,7 +137,7 @@ public class Vector3D {
      * by the factor.
      */
     public Vector3D scale(double factor) {
-        return new Vector3D(0, 0, 0);
+        return this.scale(factor, factor, factor);
     }// scale(double)
     
     
