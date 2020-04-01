@@ -113,6 +113,8 @@ public class Vector3D {
      * vector by.
      * @param factor1 The factor by which to scale the second number in this 
      * vector by.
+     * @param factor2 The factor by which to scale the third number in this
+     * vector by.
      * @return A new vector of length 3 that is the original scaled 
      * by the factors.
      */
