@@ -86,5 +86,81 @@ public class Matrix2D {
         
     }// Matrix(Vector2D, Vector2D, vectorType)
     
-            
+    
+    /**
+     * Returns a string representation of this matrix.
+     * 
+     * @return A string representation of this matrix.
+     */
+    @Override
+    public String toString() {
+        return "";
+    }// toString()
+    
+    
+    /**
+     * Returns a number in this matrix.
+     * 
+     * @param row The row index of the number.
+     * @param column The column index of the number.
+     * @return A number stored in the matrix.
+     */
+    public double getNumber(int row, int column) {
+        return 0;
+    }// getNumber(int, int)
+    
+    
+    /**
+     * Multiplies this matrix with another 2x2 matrix.
+     * 
+     * @param m Another 2x2 matrix.
+     * @return A new 2x2 matrix that is the product of the other two matrices.
+     */
+    public Matrix2D multiply(Matrix2D m) {
+        return new Matrix2D();
+    }// multiply(Matrix2D)
+    
+    
+    /**
+     * Multiplies this matrix by a vector of length 2.
+     * 
+     * @param v A vector of length 2.
+     * @return A vector of length 2 that is the product of this matrix and the 
+     * vector v.
+     */
+    public Vector2D vectorMultiply(Vector2D v) {
+        return new Vector2D(0, 0);
+    }// vectorMultiply(Vector2D)
+    
+    
+    /**
+     * Adds this matrix with another 2x2 matrix.
+     * 
+     * @param m Another 2x2 matrix.
+     * @return A 2x2 matrix that is the sum of the other two matrices.
+     */
+    public Matrix2D add(Matrix2D m) {
+        return new Matrix2D();
+    }// add(Matrix2D)
+    
+    
+    /**
+     * Finds the determinant of this matrix.
+     * 
+     * @return The determinant of this matrix.
+     */
+    public double determinant() {
+        return 0;
+    }// determinant()
+    
+    
+    /**
+     * Finds the inverse matrix of this matrix.
+     * 
+     * @return The inverse matrix of this matrix.
+     */
+    public Matrix2D inverse() {
+        return new Matrix2D();
+    }// inverse()   
+    
 }// Matrix2D
