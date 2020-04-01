@@ -142,7 +142,10 @@ public class Vector2D {
     public Vector2D rotateScaleTranslate(double angle, double scalep0,
         double scalep1, double deltap0, double deltap1) {
         
-        return new Vector2D(0, 0);
+        Vector2D rotated = this.rotate(angle);
+        Vector2D scaled = rotated.scale(scalep0, scalep1);
+        
+        return scaled.add(new Vector2D(deltap0, deltap1));
     }// rotateScaleTranslate(double, double, double, double, double)
     
     
