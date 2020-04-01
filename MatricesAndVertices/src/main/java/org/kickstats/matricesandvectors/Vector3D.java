@@ -141,53 +141,53 @@ public class Vector3D {
     }// scale(double)
     
     
-    /**
-     * Rotates this vector by an angle.
-     * 
-     * @param angle0 The angle to rotate about the x-axis.
-     * @param angle1 The angle to rotate about the y-axis.
-     * @param angle2 The angle to rotate about the z-axis.
-     * @return A new vector of length 3 that is the original rotated by the 
-     * angles.
-     */
-    public Vector3D rotate(double angle0, double angle1, double angle2) {
-        double new0 = this.p0 * Math.cos(angle0) + this.p1 * Math.sin(angle0);
-        double new1 = this.p0 * Math.sin(angle0) + this.p1 * Math.cos(angle0);
-        return new Vector3D(0, 0, 0);
-    }// rotate(double, double, double)
+//    /**
+//     * Rotates this vector by an angle.
+//     * 
+//     * @param angle0 The angle to rotate about the x-axis.
+//     * @param angle1 The angle to rotate about the y-axis.
+//     * @param angle2 The angle to rotate about the z-axis.
+//     * @return A new vector of length 3 that is the original rotated by the 
+//     * angles.
+//     */
+//    public Vector3D rotate(double angle0, double angle1, double angle2) {
+//        double new0 = this.p0 * Math.cos(angle0) + this.p1 * Math.sin(angle0);
+//        double new1 = this.p0 * Math.sin(angle0) + this.p1 * Math.cos(angle0);
+//        return new Vector3D(0, 0, 0);
+//    }// rotate(double, double, double)
     
     
-    /**
-     * Rotates, scales, and moves a vector.
-     * 
-     * @param angle0 The angle (radians) by which to rotate this vector about
-     * the x-axis.
-     * @param angle1 The angle (radians) by which to rotate this vector about
-     * the y-axis.
-     * @param angle2 The angle (radians) by which to rotate this vector about
-     * the z-axis.
-     * @param scalep0 The factor by which to scale the first number of 
-     * this vector.
-     * @param scalep1 The factor by which to scale the second number of
-     * this vector.
-     * @param scalep3 The factor by which to scale the third number of
-     * this vector.
-     * @param deltap0 The distance to move the first number of this vector.
-     * @param deltap1 The distance to move the second number of this vector.
-     * @param deltap2 The distance to move the third number of this vector.
-     * @return A new vector of length 3 that has been rotated, scaled, and 
-     * moved accordingly.
-     */
-    public Vector3D rotateScaleTranslate(double angle0, double angle1, double angle2, 
-        double scalep0, double scalep1, double scalep3, double deltap0, 
-        double deltap1, double deltap2) {
-        
-        Vector3D rotated = this.rotate(angle0, 0, 0);
-        Vector3D scaled = rotated.scale(scalep0, scalep1, 0);
-        
-        return new Vector3D(0, 0, 0);
-    }// rotateScaleTranslate(double, double, double, double, double, double, 
-     //double, double, double)
+//    /**
+//     * Rotates, scales, and moves a vector.
+//     * 
+//     * @param angle0 The angle (radians) by which to rotate this vector about
+//     * the x-axis.
+//     * @param angle1 The angle (radians) by which to rotate this vector about
+//     * the y-axis.
+//     * @param angle2 The angle (radians) by which to rotate this vector about
+//     * the z-axis.
+//     * @param scalep0 The factor by which to scale the first number of 
+//     * this vector.
+//     * @param scalep1 The factor by which to scale the second number of
+//     * this vector.
+//     * @param scalep3 The factor by which to scale the third number of
+//     * this vector.
+//     * @param deltap0 The distance to move the first number of this vector.
+//     * @param deltap1 The distance to move the second number of this vector.
+//     * @param deltap2 The distance to move the third number of this vector.
+//     * @return A new vector of length 3 that has been rotated, scaled, and 
+//     * moved accordingly.
+//     */
+//    public Vector3D rotateScaleTranslate(double angle0, double angle1, double angle2, 
+//        double scalep0, double scalep1, double scalep3, double deltap0, 
+//        double deltap1, double deltap2) {
+//        
+//        Vector3D rotated = this.rotate(angle0, 0, 0);
+//        Vector3D scaled = rotated.scale(scalep0, scalep1, 0);
+//        
+//        return new Vector3D(0, 0, 0);
+//    }// rotateScaleTranslate(double, double, double, double, double, double, 
+//     //double, double, double)
     
     
     /**
