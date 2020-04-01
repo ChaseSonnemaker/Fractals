@@ -89,7 +89,8 @@ public class Vector3D {
     public double dot(Vector3D v) {
         double product0 = this.p0 * v.p0;
         double product1 = this.p1 * v.p1;
-        return 0;
+        double product2 = this.p2 * v.p2;
+        return product0 + product1 + product2;
     }// dot(Vector3D)
     
     
