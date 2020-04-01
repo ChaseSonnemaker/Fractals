@@ -7,6 +7,6 @@ package org.kickstats.matricesandvectors;
  * @author Chase Sonnemaker
  * @version 31 March 2020
  */
-public class Vertex2D {
+public class Vector2D {
     
-}// Vertex2D
+}// Vector2D
