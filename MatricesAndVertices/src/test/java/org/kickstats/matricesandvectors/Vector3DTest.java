@@ -126,45 +126,45 @@ public class Vector3DTest {
         assertEquals(expResult.getp2(), result.getp2(), 1E-8);
     }
 
-    /**
-     * Test of rotate method, of class Vector3D.
-     */
-    @Test
-    public void testRotate() {
-        System.out.println("rotate");
-        double angle0 = 2 * Math.PI;
-        double angle1 = 2 * Math.PI;
-        double angle2 = 2 * Math.PI;
-        Vector3D instance = new Vector3D(2, 2, 2);
-        Vector3D expResult = new Vector3D(2, 2, 2);
-        Vector3D result = instance.rotate(angle0, angle1, angle2);
-        assertEquals(expResult.getp0(), result.getp0(), 1E-8);
-        assertEquals(expResult.getp1(), result.getp1(), 1E-8);
-        assertEquals(expResult.getp2(), result.getp2(), 1E-8);
-    }
+//    /**
+//     * Test of rotate method, of class Vector3D.
+//     */
+//    @Test
+//    public void testRotate() {
+//        System.out.println("rotate");
+//        double angle0 = 2 * Math.PI;
+//        double angle1 = 2 * Math.PI;
+//        double angle2 = 2 * Math.PI;
+//        Vector3D instance = new Vector3D(2, 2, 2);
+//        Vector3D expResult = new Vector3D(2, 2, 2);
+//        Vector3D result = instance.rotate(angle0, angle1, angle2);
+//        assertEquals(expResult.getp0(), result.getp0(), 1E-8);
+//        assertEquals(expResult.getp1(), result.getp1(), 1E-8);
+//        assertEquals(expResult.getp2(), result.getp2(), 1E-8);
+//    }
 
-    /**
-     * Test of rotateScaleTranslate method, of class Vector3D.
-     */
-    @Test
-    public void testRotateScaleTranslate() {
-        System.out.println("rotateScaleTranslate");
-        double angle0 = 2 * Math.PI;
-        double angle1 = 2 * Math.PI;
-        double angle2 = 2 * Math.PI;
-        double scalep0 = 2;
-        double scalep1 = 4;
-        double scalep3 = 6;
-        double deltap0 = 6;
-        double deltap1 = 4;
-        double deltap2 = 2;
-        Vector3D instance = new Vector3D(2, 2, 2);
-        Vector3D expResult = new Vector3D(10, 12, 14);
-        Vector3D result = instance.rotateScaleTranslate(angle0, angle1, angle2, scalep0, scalep1, scalep3, deltap0, deltap1, deltap2);
-        assertEquals(expResult.getp0(), result.getp0(), 1E-8);
-        assertEquals(expResult.getp1(), result.getp1(), 1E-8);
-        assertEquals(expResult.getp2(), result.getp2(), 1E-8);
-    }
+//    /**
+//     * Test of rotateScaleTranslate method, of class Vector3D.
+//     */
+//    @Test
+//    public void testRotateScaleTranslate() {
+//        System.out.println("rotateScaleTranslate");
+//        double angle0 = 2 * Math.PI;
+//        double angle1 = 2 * Math.PI;
+//        double angle2 = 2 * Math.PI;
+//        double scalep0 = 2;
+//        double scalep1 = 4;
+//        double scalep3 = 6;
+//        double deltap0 = 6;
+//        double deltap1 = 4;
+//        double deltap2 = 2;
+//        Vector3D instance = new Vector3D(2, 2, 2);
+//        Vector3D expResult = new Vector3D(10, 12, 14);
+//        Vector3D result = instance.rotateScaleTranslate(angle0, angle1, angle2, scalep0, scalep1, scalep3, deltap0, deltap1, deltap2);
+//        assertEquals(expResult.getp0(), result.getp0(), 1E-8);
+//        assertEquals(expResult.getp1(), result.getp1(), 1E-8);
+//        assertEquals(expResult.getp2(), result.getp2(), 1E-8);
+//    }
 
     /**
      * Test of magnitude method, of class Vector3D.
