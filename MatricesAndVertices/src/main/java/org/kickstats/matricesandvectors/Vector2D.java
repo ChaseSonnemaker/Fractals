@@ -76,8 +76,9 @@ public class Vector2D {
      * @return A vector of length 2 that is the sum of the other two vectors.
      */
     public Vector2D add(Vector2D v) {
-        
-        return new Vector2D(0, 0);
+        double sum0 = this.p0 + v.p0;
+        double sum1 = this.p1 + v.p1;
+        return new Vector2D(sum0, sum1);
     }// add(Vector2D)
     
     
@@ -92,7 +93,9 @@ public class Vector2D {
      * by the factors.
      */
     public Vector2D scale(double factor0, double factor1) {
-        return new Vector2D(0, 0);
+        double new0 = this.p0 * factor0;
+        double new1 = this.p0 * factor1;
+        return new Vector2D(new0, new1);
     }// scale(double, double)
     
     
