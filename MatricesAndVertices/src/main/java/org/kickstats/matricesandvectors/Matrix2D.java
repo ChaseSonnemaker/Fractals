@@ -111,6 +111,28 @@ public class Matrix2D {
     
     
     /**
+     * Returns a vector representation of a row of this matrix.
+     * 
+     * @param row The index of the row to return.
+     * @return A vector of length 2 representing the row.
+     */
+    public Vector2D getRow(int row) {
+        return new Vector2D(0, 0);
+    }// getRow(int)
+    
+    
+    /**
+     * Returns a vector representation of a column of this matrix.
+     * 
+     * @param column The index of the column to return.
+     * @return A vector of length 2 representing the column.
+     */
+    public Vector2D getColumn(int column) {
+        return new Vector2D(0, 0);
+    }// getColumn(int)
+    
+    
+    /**
      * Multiplies this matrix with another 2x2 matrix.
      * 
      * @param m Another 2x2 matrix.
