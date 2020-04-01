@@ -155,7 +155,7 @@ public class Vector2D {
      * @return The magnitude of the vector.
      */
     public double magnitude() {
-        return 0;
+        return Math.sqrt(this.dot(this));
     }// magnitude()
     
     
