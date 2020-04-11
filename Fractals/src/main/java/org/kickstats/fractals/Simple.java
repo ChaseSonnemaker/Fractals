@@ -23,7 +23,6 @@ public class Simple extends JFrame {
     
     /**
      * Creates and displays a window.
-     * 
      *
      * Draw something in the window by instantiating another class.
      * 
@@ -34,6 +33,9 @@ public class Simple extends JFrame {
         this.setTitle(SIMPLE_TITLE);
         
         Container pane = this.getContentPane();
+        
+        SimpleBitmap panel = new SimpleBitmap();
+        pane.add(panel);
         
         this.setVisible(true);
     }// Simple()
