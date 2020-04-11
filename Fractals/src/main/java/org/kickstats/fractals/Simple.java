@@ -10,9 +10,7 @@ import javax.swing.Timer;
 
 
 /**
- * Create and display a window.
- * 
- * Draw something in the window by instantiating another class.
+ * Makes a window used to draw something.
  * 
  * @author Chase Sonnemaker transcribed from Leon Tabak's code
  * @version 11 April 2020
@@ -23,7 +21,13 @@ public class Simple extends JFrame {
     private static final int SIMPLE_HEIGHT = 512;
     private static final String SIMPLE_TITLE = "Simple";
     
-    
+    /**
+     * Creates and displays a window.
+     * 
+     *
+     * Draw something in the window by instantiating another class.
+     * 
+     */
     public Simple() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(SIMPLE_WIDTH, SIMPLE_HEIGHT);
