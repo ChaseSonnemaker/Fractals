@@ -23,6 +23,103 @@ public class SimpleBitmap extends JPanel {
     private static final int BITMAP_HEIGHT = 512;
     private BufferedImage image;
     
+    //Complex plane
+    private final double uMin = -0.3;
+    private final double uMax = 0;
+    private final double vMin = -1.2;
+    private final double vMax = -1;
+    
+    //Real plane
+    private final double xMin = 0;
+    private final double xMax = BITMAP_WIDTH - 1;
+    private final double yMin = 0;
+    private final double yMax = BITMAP_HEIGHT - 1;
+    
+    //Mandelbrot Set
+    private final double magMax = 2.0;
+    private final int iterMax = 12;
+    
+    
+    /**
+     * Maps a pair of real plane coordinates to coordinates in the 
+     * complex plane.
+     * 
+     * @param x An x coordinate in the real plane.
+     * @param y A y coordinate in the real plane.
+     * @return A complex number represented coordinates in the real plane 
+     * mapped to coordinates in the complex plane.
+     */
+    public Complex map(double x, double y) {
+        //u mapping
+        double uDist = this.uMax - this.uMin;
+        double xDist = this.xMax - this.xMin;
+        double xCurDist = x - this.xMin;
+        
+        double newU = this.uMin + uDist * (xCurDist / xDist);
+        
+        //v mapping
+        double vDist = this.vMax - this.vMin;
+        double yDist = this.yMax - this.yMin;
+        double yCurDist = y - this.yMin;
+        
+        double newV = this.vMin + vDist * (yCurDist / yDist);
+        
+        //Complex Coordinate
+        return new Complex(newU, newV);
+    }// mapX(Complex)
+    
+    
+    /**
+     * Checks to see if a complex point is in the Mandelbrot Set by iterating.
+     * 
+     * Stops if the number is not in the set or if a threshold of iterations 
+     * is reached. 
+     * 
+     * @param c A complex number represent a point on the complex plane.
+     * @return The number of iterations that occurred while testing to see 
+     * if the point is in the Mandelbrot Set. 
+     */
+    public int identifySet(Complex c) {
+        Complex z = new Complex(0, 0);
+        int iterCount = -1;
+        while(z.magnitude() < this.magMax && iterCount < this.iterMax) {
+            z = c.add(z.multiply(z));
+            iterCount++;
+        }// while
+        return iterCount;
+    }// identifySet(Complex c)
+    
+    
+    /**
+     * Returns an array of integers representing rgb color values.
+     * 
+     * The returned color is based on the value of an integer and
+     * is designed to be used with the return value of the
+     * identifySet method.
+     * 
+     * @param n An integer used to define the returned color.
+     * @return An array of integers representing a rgb color value.
+     */
+    public int[] getRGBColor(int n) {
+        if(n < iterMax) {
+            int r = 255;
+            int g = 0;
+            int b = 0;
+            
+            g = g + n * (255 / iterMax);
+            int[] rgb = {r, g, b};
+            return rgb;
+        }// if
+        else {
+            int r = 0;
+            int g = 0;
+            int b = 0;
+            
+            int[] rgb = {r, g, b};
+            return rgb;
+        }// else
+    }// getRGBColor()
+    
     
     /**
      * Creates an instance of this class.
@@ -57,18 +154,13 @@ public class SimpleBitmap extends JPanel {
                         ((double) h) / BITMAP_HEIGHT);
         
         WritableRaster raster = this.image.getRaster();
-        
-        int[] black = {0, 0, 0};
-        int[] yellow = {255, 255, 0};
-        
+         
         for(int i = 0; i < h; i++) {
             for(int j = 0; j < w; j++) {
-                if (i < j) {
-                    raster.setPixel(i, j, yellow);
-                }// if
-                else {
-                    raster.setPixel(i, j, black);
-                }// else
+                Complex c = map(i, j);
+                int iterations = identifySet(c); 
+                int[] color = getRGBColor(iterations);
+                raster.setPixel(i, j, color);
             }// for
         }// for
         
