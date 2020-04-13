@@ -39,6 +39,21 @@ public class Complex {
     
     
     /**
+     * Returns a string that represents this complex number.
+     * 
+     * The complex number is represented in the form...
+     * <P>
+     * z = x + i * y
+     * 
+     * @return A string representation of this complex number.
+     */
+    @Override        
+    public String toString() {
+        return this.x + " + i * " + this.y;
+    }// toString()
+    
+    
+    /**
      * Adds this complex number with another complex number.
      * 
      * @param c Another complex number.
