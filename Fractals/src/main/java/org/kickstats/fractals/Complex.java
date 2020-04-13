@@ -99,6 +99,25 @@ public class Complex {
     
     
     /**
+     * Divides this complex number by another complex number.
+     * 
+     * @param c Another complex number.
+     * @return A complex number that is the quotient of the
+     * other two complex numbers.
+     */
+    public Complex divide(Complex c) {
+        double newXNumerator = (this.x * c.x) + (this.y * c.y);
+        double newYNumerator = (this.y * c.x) - (this.x * c.y);
+        double newDenominator = Math.pow(c.x, 2) + Math.pow(c.y, 2);
+        
+        double newX = newXNumerator / newDenominator;
+        double newY = newYNumerator / newDenominator;
+        
+        return new Complex(newX, newY);
+    }// divide(Complex)
+    
+    
+    /**
      * Returns the magnitude of this complex number.
      * 
      * The magnitude of a complex number is the number's distance from
