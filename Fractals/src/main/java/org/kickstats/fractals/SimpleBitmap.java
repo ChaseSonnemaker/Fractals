@@ -24,10 +24,15 @@ public class SimpleBitmap extends JPanel {
     private BufferedImage image;
     
     //Complex plane
-    private final double uMin = -0.3;
-    private final double uMax = 0;
-    private final double vMin = -1.2;
-    private final double vMax = -1;
+//    private final double uMin = -0.3;
+//    private final double uMax = 0;
+//    private final double vMin = -1.2;
+//    private final double vMax = -1;
+    
+    private final double uMin = -2;
+    private final double uMax = 2;
+    private final double vMin = -2;
+    private final double vMax = 2;
     
     //Real plane
     private final double xMin = 0;
@@ -37,7 +42,11 @@ public class SimpleBitmap extends JPanel {
     
     //Mandelbrot Set
     private final double magMax = 2.0;
-    private final int iterMax = 12;
+    private final int iterMax = 50;
+    
+    //Julia Set
+    private final double x = -0.79;
+    private final double y = 0.15;
     
     
     /**
@@ -88,6 +97,18 @@ public class SimpleBitmap extends JPanel {
         }// while
         return iterCount;
     }// identifySet(Complex c)
+    
+    
+    
+    public int identifyJuliaSet(Complex z) {
+        Complex c = new Complex(this.x, this.y);
+        int iterCount = -1;
+        while(z.magnitude() < this.magMax && iterCount < this.iterMax) {
+            z = c.add(z.multiply(z));
+            iterCount++;
+        }// while
+        return iterCount;
+    }// identifyJuliaSet
     
     
     /**
@@ -157,8 +178,11 @@ public class SimpleBitmap extends JPanel {
          
         for(int i = 0; i < h; i++) {
             for(int j = 0; j < w; j++) {
-                Complex c = map(i, j);
-                int iterations = identifySet(c); 
+                Complex cz = map(i, j);
+                int iterations = identifySet(cz); 
+
+//                int iterations = identifyJuliaSet(cz);
+
                 int[] color = getRGBColor(iterations);
                 raster.setPixel(i, j, color);
             }// for
