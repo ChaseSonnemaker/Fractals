@@ -24,15 +24,15 @@ public class SimpleBitmap extends JPanel {
     private BufferedImage image;
     
     //Complex plane
-//    private final double uMin = -0.3;
-//    private final double uMax = 0;
-//    private final double vMin = -1.2;
-//    private final double vMax = -1;
+//    private final double uMin = -2;
+//    private final double uMax = 2;
+//    private final double vMin = -2;
+//    private final double vMax = 2;
     
-    private final double uMin = -2;
-    private final double uMax = 2;
-    private final double vMin = -2;
-    private final double vMax = 2;
+    private final double uMin = -1;
+    private final double uMax = -0.8;
+    private final double vMin = 0.22;
+    private final double vMax = 0.35;
     
     //Real plane
     private final double xMin = 0;
@@ -123,11 +123,10 @@ public class SimpleBitmap extends JPanel {
      */
     public int[] getRGBColor(int n) {
         if(n < iterMax) {
-            int r = 255;
-            int g = 0;
-            int b = 0;
+            int r = 0 + 5 * n;
+            int g = 255 - 5 * n;
+            int b = (int) (-0.408 * Math.pow(n, 2) + 20.4 * n);
             
-            g = g + n * (255 / iterMax);
             int[] rgb = {r, g, b};
             return rgb;
         }// if
@@ -139,7 +138,7 @@ public class SimpleBitmap extends JPanel {
             int[] rgb = {r, g, b};
             return rgb;
         }// else
-    }// getRGBColor()
+    }// getRGBColor
     
     
     /**
