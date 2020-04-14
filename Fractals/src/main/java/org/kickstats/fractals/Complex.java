@@ -4,33 +4,55 @@ package org.kickstats.fractals;
 /**
  * Models a complex number.
  * 
- * Has methods for adding, multiplying, and finding the magnitude of 
- * complex numbers. Complex number z can be represented by the following 
- * equation...
+ * Has methods for adding, subtracting, multiplying, dividing, and finding 
+ * the magnitude of complex numbers. This class models a complex number by 
+ * using the following representation of complex number z. 
  * <P>
- z = real + i * imaginary
- <P>
- Where real and imaginary are real numbers and i is the square root of -1. This class 
- models a complex number by storing the real and imaginary values.
- *  
+ *  z = x + i * y
+ * <P>
+ * Where x and y are real numbers and i is the square root of -1. This class 
+ * models a complex number by storing x as the real component and y as the 
+ * representation of the imaginary component in the complex number.
+ * <P>
+ * For more information about complex numbers try 
+ * <a href="https://www.mathsisfun.com/numbers/complex-numbers.html">here
+ * </a>.
  * 
  * @author Chase Sonnemaker
- * @version 11 April 2020
+ * @version 13 April 2020
  */
 public class Complex {
     
+    /**
+     * The real component of the complex number. 
+     * 
+     * Calculated as the x value in the z = x + i * y 
+     * representation of a complex number. 
+     */
     private final double real;
+    
+    /**
+     * The representation of the imaginary component of the complex number. 
+     * 
+     * Calculated as the y value in the z = x + i * y 
+     * representation of a complex number. 
+     */
     private final double imaginary;
+    
     
     /**
      * Creates a complex number.
      * 
-     * Stores the x and y values in the equation...
+     * Stores the x and and y values in the equation...
      * <P>
- z = real + i * imaginary
+     * z = x + i * y
+     * <P>
+     * To model a complex number.
      * 
-     * @param x The real value of the complex number.
-     * @param y The imaginary value of the complex number
+     * @param x The real component of the complex number, calculated as x 
+     * in the equation above.
+     * @param y A representation of the imaginary component of the complex 
+     * number, calculated as y in the equation above.
      */
     public Complex(double x, double y) {
         this.real = x;
@@ -43,7 +65,7 @@ public class Complex {
      * 
      * The complex number is represented in the form...
      * <P>
- z = real + i * imaginary
+     * <code>real + i * imaginary</code>
      * 
      * @return A string representation of this complex number.
      */
@@ -57,8 +79,8 @@ public class Complex {
      * Adds this complex number with another complex number.
      * 
      * @param c Another complex number.
-     * @return A complex number that is the sum of the other two
-     * complex numbers.
+     * @return A complex number that is the sum of this complex
+     * number and another complex number.
      */
     public Complex add(Complex c) {
         double newX = this.getReal() + c.getReal();
@@ -88,7 +110,7 @@ public class Complex {
      * 
      * @param c Another complex number.
      * @return A complex number that is the product of the 
-     * other two complex numbers.
+     * this complex number and another complex number.
      */
     public Complex multiply(Complex c) {
         double newX = (this.getReal() * c.getReal()) - (this.getImaginary() * c.getImaginary());
@@ -103,7 +125,7 @@ public class Complex {
      * 
      * @param c Another complex number.
      * @return A complex number that is the quotient of the
-     * other two complex numbers.
+     * this complex number divided by another complex number.
      */
     public Complex divide(Complex c) {
         double newXNumerator = (this.real * c.real) + (this.imaginary * c.imaginary);
@@ -121,7 +143,10 @@ public class Complex {
      * Returns the magnitude of this complex number.
      * 
      * The magnitude of a complex number is the number's distance from
-     * the origin in the complex plane.
+     * the origin in the complex plane. For more information of what 
+     * this means and how it is calculated try 
+     * <a href="https://www.expii.com/t/magnitude-of-a-complex-number-4944">here
+     * </a>.
      * 
      * @return The magnitude of this complex number.
      */
@@ -132,34 +157,35 @@ public class Complex {
         return Math.sqrt(xSquare + ySquare);
     }// magnitude()
 
+    
     /**
-     * Gets the x value of this complex number.
+     * Gets the real component of this complex number.
      * 
-     * x represents the x in the following equation
-     * of a complex number...
+     * The real component of this complex number is the value of x 
+     * in the following equation of a complex number...
      * <P>
- z = real + i * imaginary
+     * z = x + i * y
      * 
-     * @return The real value of this complex number. 
+     * @return The real component of this complex number. 
      */
     public double getReal() {
         return real;
-    }// getX()
+    }// getReal()
 
     
     /**
-     * Gets the y value of this complex number.
+     * Gets the imaginary component of this complex number.
      * 
-     * y represents the y in the following equation
-     * of a complex number...
+     * The imaginary component of this complex number is the value of y 
+     * in the following equation of a complex number...
      * <P>
- z = real + i * imaginary
+     * z = x + i * y
      * 
-     * @return The imaginary value of this complex number. 
+     * @return The imaginary component of this complex number. 
      */
     public double getImaginary() {
         return imaginary;
-    }// getY()
+    }// getImaginary()
     
     
 }// Complex
