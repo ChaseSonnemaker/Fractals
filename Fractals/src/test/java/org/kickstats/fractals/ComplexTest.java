@@ -132,35 +132,35 @@ public class ComplexTest {
 
     
     /**
-     * Test of getX method, of class Complex.
+     * Test of getReal method, of class Complex.
      * 
      * Gets the x number of 3 + i * 16.
      * Which should be 3.
      */
     @Test
-    public void testGetX() {
-        System.out.println("getX");
+    public void testGetReal() {
+        System.out.println("getReal");
         Complex instance = new Complex(3, 16);
         double expResult = 3.0;
         double result = instance.getReal();
         assertEquals(expResult, result, 1E-8);
-    }// testGetX()
+    }// testGetReal()
 
     
     /**
-     * Test of getY method, of class Complex.
+     * Test of getImaginary method, of class Complex.
      * 
      * Gets the x number of 3 + i * 16.
      * Which should be 16.
      */
     @Test
-    public void testGetY() {
-        System.out.println("getY");
+    public void testGetImaginary() {
+        System.out.println("getImaginary");
         Complex instance = new Complex(3, 16);
         double expResult = 16.0;
         double result = instance.getImaginary();
         assertEquals(expResult, result, 1E-8);
-    }// testGetY()
+    }// testGetImaginary()
     
     
 }// ComplexTest
