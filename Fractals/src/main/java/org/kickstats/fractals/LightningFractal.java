@@ -14,12 +14,12 @@ import javax.swing.JFrame;
  * @author Chase Sonnemaker transcribed from Leon Tabak's code
  * @version 13 April 2020
  */
-public class Simple extends JFrame {
+public class LightningFractal extends JFrame {
     
     //Window Information
-    private static final int SIMPLE_WIDTH = 512;
-    private static final int SIMPLE_HEIGHT = 512;
-    private static final String SIMPLE_TITLE = "Simple";
+    private static final int WINDOW_WIDTH = 512;
+    private static final int WINDOW_HEIGHT = 512;
+    private static final String WINDOW_TITLE = "Lightning Fractal";
     
     
     /**
@@ -27,21 +27,21 @@ public class Simple extends JFrame {
      *
      * The window has a size and name defined in this class and draws 
      * a piece of the Mandelbrot Set by creating an instance of the
-     * SimpleBitmap class.
+     * LightningFractalBitmap class.
      * 
      */
-    public Simple() {
+    public LightningFractal() {
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(SIMPLE_WIDTH, SIMPLE_HEIGHT);
-        this.setTitle(SIMPLE_TITLE);
+        this.setSize(WINDOW_WIDTH, WINDOW_HEIGHT);
+        this.setTitle(WINDOW_TITLE);
         
         Container pane = this.getContentPane();
         
-        SimpleBitmap panel = new SimpleBitmap();
+        LightningFractalBitmap panel = new LightningFractalBitmap();
         pane.add(panel);
         
         this.setVisible(true);
-    }// Simple()
+    }// LightningFractal()
     
     
     /**
@@ -49,8 +49,8 @@ public class Simple extends JFrame {
      * with a Mandelbrot Set piece drawn on it.
      */
     public static void main(String[] args) {
-        Simple simple = new Simple();
+        LightningFractal fractal = new LightningFractal();
     }// main(String[])
     
     
-}// Simple
+}// LightningFractal

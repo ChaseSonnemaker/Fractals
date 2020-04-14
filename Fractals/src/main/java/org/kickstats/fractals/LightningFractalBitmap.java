@@ -21,7 +21,7 @@ import javax.swing.JPanel;
  * @author Chase Sonnemaker transcribed from Leon Tabak's code
  * @version 13 April 2020
  */
-public class SimpleBitmap extends JPanel {
+public class LightningFractalBitmap extends JPanel {
     
     //JPanel Variables
     private static final int BITMAP_WIDTH = 475;
@@ -193,12 +193,12 @@ public class SimpleBitmap extends JPanel {
      * Creates an instance of this class which creates a buffered image of the
      * Mandelbrot Set with a class constant specified height and width.
      */
-    public SimpleBitmap() {
+    public LightningFractalBitmap() {
         int w = BITMAP_WIDTH;
         int h = BITMAP_HEIGHT;
         int imageType = BufferedImage.TYPE_INT_RGB;
         this.image = new BufferedImage(w, h, imageType);
-    }// SimpleBitmap()
+    }// LightningFractalBitmap()
     
     
     /**
@@ -241,4 +241,4 @@ public class SimpleBitmap extends JPanel {
     }// paintComponent(Graphics)
     
     
-}// SimpleBitmap
+}// LightningFractalBitmap
