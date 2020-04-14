@@ -9,7 +9,8 @@ import java.awt.image.WritableRaster;
 import javax.swing.JPanel;
 
 /**
- * Creates a panel and draws a piece of the Mandelbrot Set.
+ * Creates a panel and draws a piece of the 
+ * Mandelbrot Set on a buffered image.
  * 
  * Uses class constants to map each pixel of the panel onto a 
  * point in the complex plane, the determines if that point is 
@@ -185,7 +186,7 @@ public class SimpleBitmap extends JPanel {
     
     
     /**
-     * Creates an instance of this class which creates an image of the
+     * Creates an instance of this class which creates a buffered image of the
      * Mandelbrot Set with a class constant specified height and width.
      */
     public SimpleBitmap() {

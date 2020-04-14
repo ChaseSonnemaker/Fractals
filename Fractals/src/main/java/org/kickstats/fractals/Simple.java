@@ -8,7 +8,8 @@ import javax.swing.JFrame;
  * Creates a window used to draw a piece of the Mandelbrot Set.
  * 
  * The image is stylized using color manipulation 
- * to look like a lightning storm.
+ * to look like a lightning storm and drawn on a 
+ * buffered image.
  * 
  * @author Chase Sonnemaker transcribed from Leon Tabak's code
  * @version 13 April 2020
