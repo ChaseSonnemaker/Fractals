@@ -83,8 +83,8 @@ public class Complex {
      * number and another complex number.
      */
     public Complex add(Complex c) {
-        double newX = this.getReal() + c.getReal();
-        double newY = this.getImaginary() + c.getImaginary();
+        double newX = this.real + c.real;
+        double newY = this.imaginary + c.imaginary;
         
         return new Complex(newX, newY);
     }// add(Complex)
@@ -98,8 +98,8 @@ public class Complex {
      * this complex number and another complex number.
      */
     public Complex subtract(Complex c) {
-        double newX = this.getReal() - c.getReal();
-        double newY = this.getImaginary() - c.getImaginary();
+        double newX = this.real - c.real;
+        double newY = this.imaginary - c.imaginary;
         
         return new Complex(newX, newY);
     }// subtract(Complex)
@@ -113,8 +113,11 @@ public class Complex {
      * this complex number and another complex number.
      */
     public Complex multiply(Complex c) {
-        double newX = (this.getReal() * c.getReal()) - (this.getImaginary() * c.getImaginary());
-        double newY = (this.getReal() * c.getImaginary()) + (this.getImaginary() * c.getReal());
+        double newX = (this.real * c.real) 
+                                - (this.imaginary * c.imaginary);
+        
+        double newY = (this.real * c.imaginary) 
+                                + (this.real * c.imaginary);
         
         return new Complex(newX, newY);
     }// multiply(Complex)
@@ -128,9 +131,14 @@ public class Complex {
      * this complex number divided by another complex number.
      */
     public Complex divide(Complex c) {
-        double newXNumerator = (this.real * c.real) + (this.imaginary * c.imaginary);
-        double newYNumerator = (this.imaginary * c.real) - (this.real * c.imaginary);
-        double newDenominator = Math.pow(c.real, 2) + Math.pow(c.imaginary, 2);
+        double newXNumerator = (this.real * c.real) 
+                                    + (this.imaginary * c.imaginary);
+        
+        double newYNumerator = (this.imaginary * c.real) 
+                                    - (this.real * c.imaginary);
+        
+        double newDenominator = Math.pow(c.real, 2) 
+                                    + Math.pow(c.imaginary, 2);
         
         double newX = newXNumerator / newDenominator;
         double newY = newYNumerator / newDenominator;
@@ -151,8 +159,8 @@ public class Complex {
      * @return The magnitude of this complex number.
      */
     public double magnitude() {
-        double xSquare = Math.pow(this.getReal(), 2);
-        double ySquare = Math.pow(this.getImaginary(), 2);
+        double xSquare = Math.pow(this.real, 2);
+        double ySquare = Math.pow(this.imaginary, 2);
         
         return Math.sqrt(xSquare + ySquare);
     }// magnitude()
@@ -169,7 +177,7 @@ public class Complex {
      * @return The real component of this complex number. 
      */
     public double getReal() {
-        return real;
+        return this.real;
     }// getReal()
 
     
@@ -184,7 +192,7 @@ public class Complex {
      * @return The imaginary component of this complex number. 
      */
     public double getImaginary() {
-        return imaginary;
+        return this.imaginary;
     }// getImaginary()
     
     
