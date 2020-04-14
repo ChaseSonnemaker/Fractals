@@ -117,7 +117,7 @@ public class Complex {
                                 - (this.imaginary * c.imaginary);
         
         double newY = (this.real * c.imaginary) 
-                                + (this.real * c.imaginary);
+                                + (c.real * this.imaginary);
         
         return new Complex(newX, newY);
     }// multiply(Complex)
