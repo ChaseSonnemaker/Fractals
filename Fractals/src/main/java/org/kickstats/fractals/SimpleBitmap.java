@@ -23,15 +23,15 @@ import javax.swing.JPanel;
 public class SimpleBitmap extends JPanel {
     
     //JPanel Variables
-    private static final int BITMAP_WIDTH = 512;
-    private static final int BITMAP_HEIGHT = 512;
+    private static final int BITMAP_WIDTH = 475;
+    private static final int BITMAP_HEIGHT = 500;
     private BufferedImage image;
     
     //Real plane (Pixels)
     private final double MIN_X = 0;
-    private final double MAX_X = BITMAP_WIDTH;
+    private final double MAX_X = BITMAP_WIDTH - 1;
     private final double MIN_Y = 0;
-    private final double MAX_Y = BITMAP_HEIGHT;    
+    private final double MAX_Y = BITMAP_HEIGHT - 1;    
 
     //Complex plane 
     private final double MIN_U = -1;
