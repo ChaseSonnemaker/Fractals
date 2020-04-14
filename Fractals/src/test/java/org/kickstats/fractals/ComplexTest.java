@@ -132,6 +132,22 @@ public class ComplexTest {
 
     
     /**
+     * Test of magnitudeSquared method, of class Complex.
+     * 
+     * Finds the magnitude of 3 + i * 16.
+     * Which should be the square root of 265.
+     */
+    @Test
+    public void testMagnitudeSquared() {
+        System.out.println("magnitudeSquared");
+        Complex instance = new Complex(3, 16);
+        double expResult = 265;
+        double result = instance.magnitudeSquared();
+        assertEquals(expResult, result, 1E-8);
+    }// testMagnitudeSquared()
+    
+    
+    /**
      * Test of getReal method, of class Complex.
      * 
      * Gets the x number of 3 + i * 16.

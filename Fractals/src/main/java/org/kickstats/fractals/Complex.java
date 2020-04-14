@@ -167,6 +167,24 @@ public class Complex {
 
     
     /**
+     * Returns the squared magnitude of this complex number.
+     * 
+     * This is the magnitude of the complex number without the square root. 
+     * Can be used to speed up calculations in some situations.
+     * For more information of what the magnitude is and how it is 
+     * calculated see the magnitude method. 
+     * 
+     * @return The squared magnitude of this complex number.
+     */
+    public double magnitudeSquared() {
+        double xSquare = Math.pow(this.real, 2);
+        double ySquare = Math.pow(this.imaginary, 2);
+        
+        return xSquare + ySquare;
+    }// magnitudeSquared()
+    
+    
+    /**
      * Gets the real component of this complex number.
      * 
      * The real component of this complex number is the value of x 

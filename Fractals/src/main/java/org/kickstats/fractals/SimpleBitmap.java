@@ -42,7 +42,7 @@ public class SimpleBitmap extends JPanel {
     
     //Mandelbrot Set
     private final int MAX_ITERATIONS = 100;
-    private final double MAX_MAGNITUDE = 2.0;
+    private final double MAX_MAGNITUDE = 4.0;
     
     
     /**
@@ -111,10 +111,14 @@ public class SimpleBitmap extends JPanel {
     public int identifyMandelbrotMembership(Complex c) {
         Complex z = new Complex(0, 0);
         int iterCount = -1;
-        while(z.magnitude() < MAX_MAGNITUDE && iterCount < MAX_ITERATIONS) {
+        while(z.magnitudeSquared() < MAX_MAGNITUDE 
+                                            && iterCount < MAX_ITERATIONS) {
+            
             z = c.add(z.multiply(z));
             iterCount++;
+            
         }// while
+        
         return iterCount;
     }// identifyMandelbrotMembership(Complex c)
     
