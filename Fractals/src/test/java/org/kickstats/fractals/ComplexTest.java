@@ -56,8 +56,8 @@ public class ComplexTest {
         Complex instance = new Complex(3, 16);
         Complex expResult = new Complex(15, 21);
         Complex result = instance.add(c);
-        assertEquals(expResult.getX(), result.getX(), 1E-8);
-        assertEquals(expResult.getY(), result.getY(), 1E-8);
+        assertEquals(expResult.getReal(), result.getReal(), 1E-8);
+        assertEquals(expResult.getImaginary(), result.getImaginary(), 1E-8);
     }// testAdd()
 
     
@@ -74,8 +74,8 @@ public class ComplexTest {
         Complex instance = new Complex(3, 16);
         Complex expResult = new Complex(-9, 11);
         Complex result = instance.subtract(c);
-        assertEquals(expResult.getX(), result.getX(), 1E-8);
-        assertEquals(expResult.getY(), result.getY(), 1E-8);
+        assertEquals(expResult.getReal(), result.getReal(), 1E-8);
+        assertEquals(expResult.getImaginary(), result.getImaginary(), 1E-8);
     }// testSubtract()
 
     
@@ -92,8 +92,8 @@ public class ComplexTest {
         Complex instance = new Complex(3, 16);
         Complex expResult = new Complex(-44, 207);
         Complex result = instance.multiply(c);
-        assertEquals(expResult.getX(), result.getX(), 1E-8);
-        assertEquals(expResult.getY(), result.getY(), 1E-8);
+        assertEquals(expResult.getReal(), result.getReal(), 1E-8);
+        assertEquals(expResult.getImaginary(), result.getImaginary(), 1E-8);
     }// testMultiply()
 
     
@@ -110,8 +110,8 @@ public class ComplexTest {
         Complex instance = new Complex(3, 16);
         Complex expResult = new Complex((116.0 / 169.0), (177.0 / 169.0));
         Complex result = instance.divide(c);
-        assertEquals(expResult.getX(), result.getX(), 1E-8);
-        assertEquals(expResult.getY(), result.getY(), 1E-8);
+        assertEquals(expResult.getReal(), result.getReal(), 1E-8);
+        assertEquals(expResult.getImaginary(), result.getImaginary(), 1E-8);
     }// testDivide()
 
     
@@ -142,7 +142,7 @@ public class ComplexTest {
         System.out.println("getX");
         Complex instance = new Complex(3, 16);
         double expResult = 3.0;
-        double result = instance.getX();
+        double result = instance.getReal();
         assertEquals(expResult, result, 1E-8);
     }// testGetX()
 
@@ -158,7 +158,7 @@ public class ComplexTest {
         System.out.println("getY");
         Complex instance = new Complex(3, 16);
         double expResult = 16.0;
-        double result = instance.getY();
+        double result = instance.getImaginary();
         assertEquals(expResult, result, 1E-8);
     }// testGetY()
     

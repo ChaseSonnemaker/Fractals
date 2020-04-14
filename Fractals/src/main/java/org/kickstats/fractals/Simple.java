@@ -1,12 +1,9 @@
 
 package org.kickstats.fractals;
 
-import java.awt.Color;
-import java.awt.Component;
+
 import java.awt.Container;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.Timer;
 
 
 /**
