@@ -24,10 +24,10 @@ public class SimpleBitmap extends JPanel {
     private BufferedImage image;
     
     //Complex plane
-//    private final double uMin = -2;
-//    private final double uMax = 2;
-//    private final double vMin = -2;
-//    private final double vMax = 2;
+    private final double uJMin = -1.6;
+    private final double uJMax = 1.8;
+    private final double vJMin = -0.9;
+    private final double vJMax = 0.9;
     
     private final double uMin = -1;
     private final double uMax = -0.8;
@@ -42,11 +42,11 @@ public class SimpleBitmap extends JPanel {
     
     //Mandelbrot Set
     private final double magMax = 2.0;
-    private final int iterMax = 50;
+    private final int iterMax = 100;
     
     //Julia Set
-    private final double x = -0.79;
-    private final double y = 0.15;
+    private final double x = 0.3;
+    private final double y = -0.01;
     
     
     /**
@@ -99,6 +99,35 @@ public class SimpleBitmap extends JPanel {
     }// identifySet(Complex c)
     
     
+    /**
+     * Maps a pair of real plane coordinates to coordinates in the 
+     * complex plane.
+     * 
+     * @param x An x coordinate in the real plane.
+     * @param y A y coordinate in the real plane.
+     * @return A complex number represented coordinates in the real plane 
+     * mapped to coordinates in the complex plane.
+     */
+    public Complex mapJulia(double x, double y) {
+        //u mapping
+        double uDist = this.uJMax - this.uJMin;
+        double xDist = this.xMax - this.xMin;
+        double xCurDist = x - this.xMin;
+        
+        double newU = this.uJMin + uDist * (xCurDist / xDist);
+        
+        //v mapping
+        double vDist = this.vJMax - this.vJMin;
+        double yDist = this.yMax - this.yMin;
+        double yCurDist = y - this.yMin;
+        
+        double newV = this.vJMin + vDist * (yCurDist / yDist);
+        
+        //Complex Coordinate
+        return new Complex(newU, newV);
+    }// mapX(Complex)
+    
+    
     
     public int identifyJuliaSet(Complex z) {
         Complex c = new Complex(this.x, this.y);
@@ -122,18 +151,34 @@ public class SimpleBitmap extends JPanel {
      * @return An array of integers representing a rgb color value.
      */
     public int[] getRGBColor(int n) {
-        if(n < iterMax) {
-            int r = 0 + 5 * n;
-            int g = 255 - 5 * n;
-            int b = (int) (-0.408 * Math.pow(n, 2) + 20.4 * n);
+        if(n < 10) {
+            int r = 0;
+            int g = 150 + 20 * n;
+            int b = 0;
             
             int[] rgb = {r, g, b};
             return rgb;
         }// if
+        else if(n >= 10 && n < 25) {
+            int r = 25 + n;
+            int g = 50 + 2 * n;
+            int b = 125 + 2 * n;
+            
+            int[] rgb = {r, g, b};
+            return rgb;
+        }// else if
+        else if(n >= 25 && n < 75) {
+            int r = 255;
+            int g = 255;
+            int b = 100 + n;
+            
+            int[] rgb = {r, g, b};
+            return rgb;
+        }// else if
         else {
-            int r = 0;
-            int g = 0;
-            int b = 0;
+            int r = 255 - 2 * n;
+            int g = 255 - 2 * n;
+            int b = 255 - 2 * n;
             
             int[] rgb = {r, g, b};
             return rgb;
@@ -177,10 +222,11 @@ public class SimpleBitmap extends JPanel {
          
         for(int i = 0; i < h; i++) {
             for(int j = 0; j < w; j++) {
-                Complex cz = map(i, j);
-                int iterations = identifySet(cz); 
+                Complex c = map(i, j);
+                int iterations = identifySet(c); 
 
-//                int iterations = identifyJuliaSet(cz);
+//                Complex z = mapJulia(i, j);
+//                int iterations = identifyJuliaSet(z);
 
                 int[] color = getRGBColor(iterations);
                 raster.setPixel(i, j, color);
