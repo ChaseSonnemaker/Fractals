@@ -96,7 +96,7 @@ public class SimpleBitmap extends JPanel {
      * 
      * Using the following formula...
      * <P>
-     * z = z&sup2 + c
+     * z = z(n&sup2;) + c
      * <P>
      * where z starts as the complex number point 0 + i * 0 and c is the 
      * complex number point to test, this loop is repeated until the magnitude 
